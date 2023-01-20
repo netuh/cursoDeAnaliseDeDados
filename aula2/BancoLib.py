@@ -1,4 +1,5 @@
 import random
+import pickle
 
 
 class Conta():
@@ -65,3 +66,13 @@ class Banco():
                 i.render()
                 return True
         return False
+
+    def salveArquivo(self):
+        with open('conta.dados', 'wb') as arquivo:
+            # Serializa o objeto e salva no arquivo
+            pickle.dump(self.contas, arquivo)
+
+    def carregarArquivo(self):
+        with open('conta.dados', 'rb') as arquivo:
+            # Carrega o objeto serializado do arquivo
+            self.contas = pickle.load(arquivo)

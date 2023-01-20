@@ -9,6 +9,7 @@ class Ponto():
 
     def distancia(self, outroPonto):
         dist = math.sqrt((outroPonto.x-self.x)**2 + (outroPonto.y-self.y)**2)
+#        #dist = ((outroPonto.x-self.x)**2 + (outroPonto.y-self.y)**2)**1/2
         return dist
 
     def quadrante(self):
@@ -20,6 +21,15 @@ class Ponto():
             return "terceiro quadrante"
         else:
             return "quarto quadrante"
+
+
+class PontoNomeado(Ponto):
+    def __init__(self, xNovo, yNovo, nome):
+        self.nome = nome
+        super().__init__(xNovo, yNovo)
+
+    def getNome(self):
+        return self.nome
 
 
 class Circuferencia():
@@ -35,18 +45,22 @@ class Circuferencia():
             return False
 
 
-p = Ponto(1, 1)
-x2 = int(input("digite o x do ponto 2:"))
-y2 = int(input("digite o y do ponto 2:"))
-p2 = Ponto(x2, y2)
+pNomeado = PontoNomeado(1, 1, "ponto1")
+print(pNomeado.quadrante())
+print(pNomeado.getNome())
 
-num = 10
+# p = Ponto(1, 1)
+# x2 = int(input("digite o x do ponto 2:"))
+# y2 = int(input("digite o y do ponto 2:"))
+# p2 = Ponto(x2, y2)
 
-dist = p.distancia(p2)
-print(dist)
-print(p.quadrante())
-print(p2.quadrante())
+# num = 10
 
-c = Circuferencia(p, 1)
-respo = c.pertence(p2)
-print(respo)
+# dist = p.distancia(p2)
+# print(dist)
+# print(p.quadrante())
+# print(p2.quadrante())
+
+# c = Circuferencia(p, 1)
+# respo = c.pertence(p2)
+# print(respo)

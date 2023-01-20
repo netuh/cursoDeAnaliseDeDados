@@ -1,14 +1,21 @@
 from BancoLib import Banco
 
+
+def imprimeMenu():
+    print("Menu")
+    print("0 - Sair")
+    print("1 - Criar uma Nova Conta")
+    print("2 - Consultar Saldo Conta")
+    print("3 - Depositar na Conta")
+    print("4 - Sacar na Conta")
+    print("5 - Render Poupanca")
+
+
+# 467
 print("Bem-vindo")
 bancoUfrpe = Banco("UABJ")
-print("Menu")
-print("0 - Sair")
-print("1 - Criar uma Nova Conta")
-print("2 - Consultar Saldo Conta")
-print("3 - Depositar na Conta")
-print("4 - Sacar na Conta")
-print("5 - Render Poupanca")
+bancoUfrpe.carregarArquivo()
+imprimeMenu()
 escolha = int(input("digite a opção desejada:"))
 while escolha > 0:
     if escolha == 1:
@@ -50,4 +57,7 @@ while escolha > 0:
             print("Poupanca com novo saldo")
         else:
             print("A conta não é poupanca ou não existe")
+    imprimeMenu()
     escolha = int(input("digite a opção desejada:"))
+
+bancoUfrpe.salveArquivo()
