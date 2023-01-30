@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+licitacoes-2021.csv
+licitacoes-2022.csv
